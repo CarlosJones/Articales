@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta charset="utf-8">
+<!-- 外部样式 -->
+<link type="text/css" rel="stylesheet" href="{{ site.baseurl }}/assets/default.css">
+<link rel="shortcut icon" href="{{ site.avatar }}">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/bootstrap/css/bootstrap.min.css">
+<script src="{{ site.baseurl }}/assets/script.js"></script>
+<script src="{{ site.baseurl }}/assets/jquery/jQuery-2.2.0.min.js"></script>
+<script src="{{ site.baseurl }}/assets/bootstrap/js/bootstrap.min.js"></script>
+<script>
+var host = "{{ site.domain }}";
+    if ((host == window.location.host)
+        && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+
+<title>{{ page.title }} | {{ site.name }} </title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+<!-- 侧边栏 -->
+<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 sidebar">
+    <a href="/">
+        <img id="avatar" width="80" height="80" style="border-radius: 50%" src="{{ site.avatar }}">
+    </a>
+    <h2><a href="/">谷月轩</a></h2>
+    <p> {{ site.description }}</p>
+    <ul>
+        <li><a href="{{ site.baseurl }}/">时间线</a></li>
+        <li><a href="{{ site.baseurl }}/archives.html">归档</a></li>
+        <li><a href="{{ site.baseurl }}/tags.html">标签</a></li>
+        <li><a href="{{ site.baseurl }}/links.html">链接</a></li>
+        <li><a href="{{ site.baseurl }}/changelog.html">变更</a></li>
+        <li><a href="{{ site.baseurl }}/about.html">关于</a></li>
+        <li><a href="{{ site.baseurl }}/feed.xml">订阅</a></li>
+    </ul>
+</div>
+<!-- 侧边栏结束 -->
+<!-- 主体 -->
+<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 postlist">
+    <h3><font color="white">Jeklly 的一个最好的特点是“关注 blog 本身”。这是指什么呢？简单的说就是写博客的过程被 铸造进了 Jekyll 的功能中。你只需简单的管理你电脑中的一个文件夹下的文本文件就 可以写文章并方便的在线上发布。与繁琐的配置和维护数据库和基于网站的内容管理系统（CMS）相比， 这是一个非常受欢迎的改变。</font></h3>
+    <img id="bodyImg" width="100%"  src="{{ site.baseurl }}/assets/body.jpg">
+    {{ content }}
+</div>
+<!-- 主体结束 -->
+<!-- 页脚 -->
+<div class="footer">
+    2015 - {{ site.time | date:"%Y" }} © <a href="http://silverrainz.me">SilverRainZ</a> | Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+</div>
+    </div>
+</div>
+</body>
+<!-- 页脚结束 -->
+<!-- gostats 统计 -->
+<script> listenallimg(); </script>
+</html>
